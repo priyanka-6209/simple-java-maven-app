@@ -10,22 +10,22 @@ stages {
 stage ('build') {
  steps {
   sh "mvn -B -DskipTests clean package"
-       }
+ }
 }
      
 stage('Test') {
-          steps {
-                sh "mvn test"
-            }
- post{
-  always{
-  junit 'target/surfire-reports/*.xml'
-  }
+   steps {
+     sh "mvn test"
+   }
+   post{
+     always{
+       junit 'target/surfire-reports/*.xml'
+     }
+   }
  }
-}
  stage('Deploy'){
   steps{
-  sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
+     sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
   }
  }
 }
