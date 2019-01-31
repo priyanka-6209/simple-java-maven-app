@@ -13,7 +13,7 @@ stage('Artifactory Configuration'){
 	  rtServer(
      id: "ARTIFACTORY_SERVER",
      url: "http://52.41.105.132:8081/artifactory",
-     credentialsId:"Artifactory"	
+     credentialsId:"Artifactory-ID"	
    )
   rtMavenDeployer(
     id: "MAVEN_DEPLOYER",
