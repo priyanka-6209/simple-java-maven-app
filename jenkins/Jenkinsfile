@@ -11,7 +11,7 @@ stage ('build') {
  steps {
   sh "mvn -B -DskipTests clean package"
        }
-                }
+}
      
 stage('Test') {
           steps {
@@ -28,4 +28,5 @@ stage('Test') {
   sh 'java -jar target/sample-app-1.0-SNAPSHOT.jar'
   }
  }
+}
 }
